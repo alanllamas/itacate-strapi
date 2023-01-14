@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "warehouses",
+  "info": {
+    "singularName": "warehouse",
+    "pluralName": "warehouses",
+    "displayName": "warehouse"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "specifications": {
+      "type": "string"
+    },
+    "warehouse_categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::warehouse-category.warehouse-category",
+      "mappedBy": "warehouse"
+    }
+  }
+}

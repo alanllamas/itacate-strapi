@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "warehouse_categories",
+  "info": {
+    "singularName": "warehouse-category",
+    "pluralName": "warehouse-categories",
+    "displayName": "warehouse category"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "category": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "warehouse": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::warehouse.warehouse",
+      "inversedBy": "warehouse_categories"
+    }
+  }
+}

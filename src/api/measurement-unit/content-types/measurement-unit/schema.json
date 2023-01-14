@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "measurement_units",
+  "info": {
+    "singularName": "measurement-unit",
+    "pluralName": "measurement-units",
+    "displayName": "measurement unit"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "unit": {
+      "type": "string"
+    },
+    "abbreviation_single": {
+      "type": "string"
+    },
+    "abbreviation_plural": {
+      "type": "string"
+    }
+  }
+}
