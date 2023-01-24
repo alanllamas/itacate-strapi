@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_tasks_task_lists",
+  "info": {
+    "displayName": "task list",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "step": {
+      "type": "string"
+    },
+    "step_order": {
+      "type": "integer"
+    },
+    "description": {
+      "type": "text"
+    },
+    "related_supplies": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::supply.supply"
+    },
+    "required_time_minutes": {
+      "type": "integer"
+    }
+  }
+}

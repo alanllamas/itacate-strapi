@@ -1,0 +1,69 @@
+{
+  "kind": "collectionType",
+  "collectionName": "supply_output_orders",
+  "info": {
+    "singularName": "supply-output-order",
+    "pluralName": "supply-output-orders",
+    "displayName": "supply output order",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "requester": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "supply_output_order_requests"
+    },
+    "request_area": {
+      "type": "enumeration",
+      "enum": [
+        "Nixtamal",
+        "Molino",
+        "Tortilla",
+        "Totopo",
+        "Empaque",
+        "Laboratorio"
+      ]
+    },
+    "quantity": {
+      "type": "integer"
+    },
+    "output_date": {
+      "type": "date"
+    },
+    "output_reason": {
+      "type": "enumeration",
+      "enum": [
+        "Producción",
+        "Venta",
+        "Pruebas",
+        "Merma"
+      ]
+    },
+    "authorized_by": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "supply_output_order_authorization"
+    },
+    "comments": {
+      "type": "text"
+    },
+    "batch_code": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::supply-input-order.supply-input-order",
+      "inversedBy": "supply_output_orders"
+    },
+    "available": {
+      "type": "integer"
+    },
+    "output_code": {
+      "type": "string"
+    }
+  }
+}

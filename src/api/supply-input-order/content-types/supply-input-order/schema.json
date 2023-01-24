@@ -1,0 +1,62 @@
+{
+  "kind": "collectionType",
+  "collectionName": "supply_input_orders",
+  "info": {
+    "singularName": "supply-input-order",
+    "pluralName": "supply-input-orders",
+    "displayName": "supply input order",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "supply": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::supply.supply",
+      "inversedBy": "supply_input_orders"
+    },
+    "quantity": {
+      "type": "integer"
+    },
+    "input_date": {
+      "type": "date"
+    },
+    "best_before_date": {
+      "type": "date"
+    },
+    "expiration_date": {
+      "type": "date"
+    },
+    "area_manager": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "provider": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::provider.provider",
+      "inversedBy": "supply_input_orders"
+    },
+    "variant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::variant.variant"
+    },
+    "batch_code": {
+      "type": "string"
+    },
+    "available": {
+      "type": "integer"
+    },
+    "supply_output_orders": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::supply-output-order.supply-output-order",
+      "mappedBy": "batch_code"
+    }
+  }
+}

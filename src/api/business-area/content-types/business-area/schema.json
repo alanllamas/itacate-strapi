@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "business_areas",
+  "info": {
+    "singularName": "business-area",
+    "pluralName": "business-areas",
+    "displayName": "business area",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "manager": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "management_areas"
+    },
+    "warehouse_categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::warehouse-category.warehouse-category",
+      "mappedBy": "business_area"
+    },
+    "production_processes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::production-process.production-process",
+      "mappedBy": "business_area"
+    },
+    "employees": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "working_areas"
+    },
+    "production_orders": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::production-order.production-order",
+      "mappedBy": "production_area"
+    }
+  }
+}

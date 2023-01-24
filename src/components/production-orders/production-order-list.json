@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_production_orders_production_order_lists",
+  "info": {
+    "displayName": "production_order_list"
+  },
+  "options": {},
+  "attributes": {
+    "production_code": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::production-order.production-order"
+    },
+    "product_brakedown": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::product-brakedown.product-brakedown"
+    },
+    "base_quantity": {
+      "type": "decimal"
+    },
+    "total_quantity": {
+      "type": "decimal"
+    }
+  }
+}

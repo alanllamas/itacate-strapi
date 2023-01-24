@@ -4,10 +4,11 @@
   "info": {
     "singularName": "warehouse",
     "pluralName": "warehouses",
-    "displayName": "warehouse"
+    "displayName": "warehouse",
+    "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
@@ -24,6 +25,12 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::warehouse-category.warehouse-category",
+      "mappedBy": "warehouse"
+    },
+    "supplies": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::supply.supply",
       "mappedBy": "warehouse"
     }
   }
