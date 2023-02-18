@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_production_orders_product_brakedown_lists",
+  "info": {
+    "displayName": "product brakedown list"
+  },
+  "options": {},
+  "attributes": {
+    "brakedown": {
+      "displayName": "brakedown item",
+      "type": "component",
+      "repeatable": true,
+      "component": "production-orders.brakedown-item"
+    }
+  }
+}

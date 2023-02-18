@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_production_orders_brakedown_items",
+  "info": {
+    "displayName": "brakedown item"
+  },
+  "options": {},
+  "attributes": {
+    "brakedown": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::product-brakedown.product-brakedown"
+    },
+    "quantity": {
+      "type": "decimal"
+    },
+    "total_cost": {
+      "type": "decimal"
+    }
+  }
+}

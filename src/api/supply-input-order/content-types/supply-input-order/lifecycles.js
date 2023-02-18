@@ -6,7 +6,7 @@ module.exports = {
     event.params.data.available = event.params.data.quantity
     supply_id = supply.connect[0].id
     provider_id = provider.connect[0].id
-    variant_id = variant.connect[0]?.id
+    variant_id = variant.connect[0]?.id 
 
     config = await strapi.entityService.findMany('api::config.config')
     // console.log(config);

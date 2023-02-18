@@ -1,7 +1,8 @@
 {
   "collectionName": "components_supplys_supply_output_lists",
   "info": {
-    "displayName": "supply output list"
+    "displayName": "supply output list",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -9,7 +10,8 @@
       "type": "integer"
     },
     "total_quantity": {
-      "type": "integer"
+      "type": "decimal",
+      "default": 0
     },
     "output_code": {
       "type": "relation",

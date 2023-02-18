@@ -32,19 +32,11 @@
     "production_date": {
       "type": "date"
     },
-    "production_time": {
-      "type": "time"
-    },
     "production_code": {
       "type": "string"
     },
     "available": {
       "type": "integer"
-    },
-    "supply_output_list": {
-      "type": "component",
-      "repeatable": true,
-      "component": "supplys.supply-output-list"
     },
     "status": {
       "type": "enumeration",
@@ -66,6 +58,11 @@
       "type": "component",
       "repeatable": true,
       "component": "production-orders.production-order-list"
+    },
+    "supply_output_list": {
+      "type": "component",
+      "repeatable": true,
+      "component": "supplys.supply-output-list"
     }
   }
 }

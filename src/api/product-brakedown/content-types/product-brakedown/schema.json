@@ -70,6 +70,11 @@
     },
     "product_datasheet": {
       "type": "richtext"
+    },
+    "brakedown_list": {
+      "type": "component",
+      "repeatable": true,
+      "component": "production-orders.brakedown-item"
     }
   }
 }

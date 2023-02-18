@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ouput_relations",
+  "info": {
+    "singularName": "ouput-relation",
+    "pluralName": "ouput-relations",
+    "displayName": "ouput relation"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "supply": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::supply.supply"
+    },
+    "output_code": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::supply-output-order.supply-output-order"
+    },
+    "total_quantity": {
+      "type": "integer"
+    },
+    "base_quantity": {
+      "type": "integer"
+    }
+  }
+}

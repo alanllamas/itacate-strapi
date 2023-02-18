@@ -62,6 +62,12 @@
     },
     "list_cost": {
       "type": "decimal"
+    },
+    "tasks": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::task.task",
+      "mappedBy": "supplies"
     }
   }
 }
