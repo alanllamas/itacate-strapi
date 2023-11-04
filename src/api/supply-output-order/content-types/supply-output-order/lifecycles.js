@@ -21,16 +21,16 @@ module.exports = {
       await strapi.entityService.findOne('api::supply-input-order.supply-input-order', batch, {
         fields: ["*"],
         populate: ["supply_output_orders", 'provider'],
-      }).then (pi => {
-        if (pi.available <= 0) throw new Error(`There is no more product available`);
-        const available = pi.available - quantity
-        const [area, supply_code, variant_code, provider_code, input_date, input_count] = pi.batch_code.split('-')
+      }).then (supply_input_order => {
+        if (supply_input_order.available <= 0) throw new Error(`There is no more product available`);
+        const available = supply_input_order.available - quantity
+        const [area, supply_code, variant_code, provider_code, input_date, input_count] = supply_input_order.batch_code.split('-')
         // input_code.pop()
         
-        // console.log(pi.provider.provider_code);
-        const middle_code = [config.supply_output_order_code, supply_code, variant_code, pi.provider.provider_code, fechaFinal].join('-')
+        // console.log(supply_input_order.provider.provider_code);
+        const middle_code = [config.supply_output_order_code, supply_code, variant_code, supply_input_order.provider.provider_code, fechaFinal].join('-')
         // console.log(output_code);
-        orders = pi.supply_output_orders.filter(order => order.output_code.includes(middle_code))
+        orders = supply_input_order.supply_output_orders.filter(order => order.output_code.includes(middle_code))
 
         // console.log(orders);
         const output_count = (orders.length + 1).toString().padStart(2, "0")

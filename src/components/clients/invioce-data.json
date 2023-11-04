@@ -1,0 +1,49 @@
+{
+  "collectionName": "components_clients_invioce_data",
+  "info": {
+    "displayName": "invioce_data"
+  },
+  "options": {},
+  "attributes": {
+    "business_name": {
+      "type": "string"
+    },
+    "RFC": {
+      "type": "string"
+    },
+    "payment_method": {
+      "type": "enumeration",
+      "enum": [
+        "to fill"
+      ]
+    },
+    "CFDI_use": {
+      "type": "enumeration",
+      "enum": [
+        "to fill"
+      ]
+    },
+    "payment_format": {
+      "type": "enumeration",
+      "enum": [
+        "to fill"
+      ]
+    },
+    "email": {
+      "type": "email"
+    },
+    "invoice_address": {
+      "type": "string"
+    },
+    "invoice_period": {
+      "type": "integer"
+    },
+    "invoice_fiscal_situation": {
+      "allowedTypes": [
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

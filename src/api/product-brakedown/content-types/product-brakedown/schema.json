@@ -62,9 +62,6 @@
       "target": "api::production-order.production-order",
       "mappedBy": "product_brakedown"
     },
-    "product_code": {
-      "type": "string"
-    },
     "expiration_days": {
       "type": "integer"
     },
@@ -75,6 +72,29 @@
       "type": "component",
       "repeatable": true,
       "component": "production-orders.brakedown-item"
+    },
+    "must_refrigerarte": {
+      "type": "boolean",
+      "default": false
+    },
+    "can_be_frozen": {
+      "type": "boolean"
+    },
+    "is_quantity_exact": {
+      "type": "boolean",
+      "default": true
+    },
+    "business_area": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::business-area.business-area",
+      "inversedBy": "product_brakedowns"
+    },
+    "storefront": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::storefront.storefront",
+      "inversedBy": "product_brakedowns"
     }
   }
 }

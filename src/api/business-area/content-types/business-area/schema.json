@@ -39,11 +39,17 @@
       "target": "plugin::users-permissions.user",
       "inversedBy": "working_areas"
     },
-    "production_orders": {
+    "product_brakedowns": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::production-order.production-order",
-      "mappedBy": "production_area"
+      "target": "api::product-brakedown.product-brakedown",
+      "mappedBy": "business_area"
+    },
+    "storefront": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::storefront.storefront",
+      "mappedBy": "business_area"
     }
   }
 }

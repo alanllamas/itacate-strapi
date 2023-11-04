@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_clients_addresses",
+  "info": {
+    "displayName": "address",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "address": {
+      "type": "string"
+    },
+    "phones": {
+      "type": "component",
+      "repeatable": true,
+      "component": "clients.phone"
+    },
+    "name": {
+      "type": "string"
+    },
+    "address_type": {
+      "type": "enumeration",
+      "enum": [
+        "restaurant",
+        "distro center",
+        "home",
+        "transport"
+      ]
+    },
+    "delivery_address": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "delivery_cost": {
+      "type": "integer"
+    }
+  }
+}

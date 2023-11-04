@@ -60,7 +60,7 @@
       "inversedBy": "supply_output_orders"
     },
     "available": {
-      "type": "integer"
+      "type": "decimal"
     },
     "output_code": {
       "type": "string"
