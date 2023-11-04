@@ -1,0 +1,79 @@
+{
+  "kind": "collectionType",
+  "collectionName": "production_orders",
+  "info": {
+    "singularName": "production-order",
+    "pluralName": "production-orders",
+    "displayName": "production order",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "product_brakedown": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product-brakedown.product-brakedown",
+      "inversedBy": "production_orders"
+    },
+    "production_date": {
+      "type": "date"
+    },
+    "production_code": {
+      "type": "string"
+    },
+    "available": {
+      "type": "integer"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "booked",
+        "preparing",
+        "done",
+        "thrown",
+        "consume"
+      ],
+      "default": "booked"
+    },
+    "quantity_to_produce": {
+      "type": "decimal"
+    },
+    "quantity_produced": {
+      "type": "decimal"
+    },
+    "production_order_list": {
+      "type": "component",
+      "repeatable": true,
+      "component": "production-orders.production-order-list"
+    },
+    "supply_output_list": {
+      "type": "component",
+      "repeatable": true,
+      "component": "supplys.supply-output-list"
+    },
+    "variant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::variant.variant"
+    },
+    "expiration_date": {
+      "type": "date"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "preparation",
+        "setup"
+      ]
+    },
+    "storefront": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::storefront.storefront",
+      "inversedBy": "production_orders"
+    }
+  }
+}

@@ -8,7 +8,7 @@
     "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
@@ -37,6 +37,15 @@
     },
     "comments": {
       "type": "text"
+    },
+    "provider_code": {
+      "type": "string"
+    },
+    "supply_input_orders": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::supply-input-order.supply-input-order",
+      "mappedBy": "provider"
     }
   }
 }

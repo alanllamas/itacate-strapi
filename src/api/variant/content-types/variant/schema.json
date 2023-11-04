@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "variants",
+  "info": {
+    "singularName": "variant",
+    "pluralName": "variants",
+    "displayName": "variant"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "variant": {
+      "type": "string"
+    },
+    "variant_type": {
+      "type": "enumeration",
+      "enum": [
+        "color",
+        "tamaño",
+        "preparación"
+      ]
+    },
+    "variant_code": {
+      "type": "string"
+    },
+    "product_brakedowns": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product-brakedown.product-brakedown",
+      "mappedBy": "variants"
+    }
+  }
+}

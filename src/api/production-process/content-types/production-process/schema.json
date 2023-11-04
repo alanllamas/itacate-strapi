@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "production_processes",
+  "info": {
+    "singularName": "production-process",
+    "pluralName": "production-processes",
+    "displayName": "production process",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "business_area": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::business-area.business-area",
+      "inversedBy": "production_processes"
+    },
+    "product_brakedowns": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product-brakedown.product-brakedown",
+      "mappedBy": "production_process"
+    },
+    "in_charge": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "production_processes"
+    },
+    "task_list": {
+      "displayName": "task list",
+      "type": "component",
+      "repeatable": true,
+      "component": "tasks.task-list"
+    },
+    "required_time_minutes": {
+      "type": "integer"
+    },
+    "resting_time_minutes": {
+      "type": "integer"
+    }
+  }
+}

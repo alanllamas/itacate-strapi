@@ -1,0 +1,100 @@
+{
+  "kind": "collectionType",
+  "collectionName": "product_brakedowns",
+  "info": {
+    "singularName": "product-brakedown",
+    "pluralName": "product-brakedowns",
+    "displayName": "product brakedown",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "production_process": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::production-process.production-process",
+      "inversedBy": "product_brakedowns"
+    },
+    "supply_list": {
+      "displayName": "supply list",
+      "type": "component",
+      "repeatable": true,
+      "component": "supplys.supply-list"
+    },
+    "variants": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::variant.variant",
+      "inversedBy": "product_brakedowns"
+    },
+    "quantity": {
+      "type": "integer"
+    },
+    "brakedown_cost": {
+      "type": "decimal"
+    },
+    "brakedown_code": {
+      "type": "string"
+    },
+    "saleable": {
+      "type": "boolean",
+      "required": true
+    },
+    "used_in_process": {
+      "type": "boolean",
+      "required": true
+    },
+    "menu_price": {
+      "type": "decimal"
+    },
+    "price_factor": {
+      "type": "float"
+    },
+    "production_orders": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::production-order.production-order",
+      "mappedBy": "product_brakedown"
+    },
+    "expiration_days": {
+      "type": "integer"
+    },
+    "product_datasheet": {
+      "type": "richtext"
+    },
+    "brakedown_list": {
+      "type": "component",
+      "repeatable": true,
+      "component": "production-orders.brakedown-item"
+    },
+    "must_refrigerarte": {
+      "type": "boolean",
+      "default": false
+    },
+    "can_be_frozen": {
+      "type": "boolean"
+    },
+    "is_quantity_exact": {
+      "type": "boolean",
+      "default": true
+    },
+    "business_area": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::business-area.business-area",
+      "inversedBy": "product_brakedowns"
+    },
+    "storefront": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::storefront.storefront",
+      "inversedBy": "product_brakedowns"
+    }
+  }
+}

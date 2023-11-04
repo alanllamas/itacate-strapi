@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_supplys_supply_output_lists",
+  "info": {
+    "displayName": "supply output list",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "base_quantity": {
+      "type": "integer"
+    },
+    "total_quantity": {
+      "type": "decimal",
+      "default": 0
+    },
+    "output_code": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::supply-output-order.supply-output-order"
+    },
+    "supply": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::supply.supply"
+    }
+  }
+}

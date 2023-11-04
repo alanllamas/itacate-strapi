@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "configs",
+  "info": {
+    "singularName": "config",
+    "pluralName": "configs",
+    "displayName": "config",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "supply_input_order_code": {
+      "type": "string"
+    },
+    "supply_output_order_code": {
+      "type": "string"
+    },
+    "production_order_code": {
+      "type": "string"
+    }
+  }
+}

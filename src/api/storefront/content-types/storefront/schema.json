@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "storefronts",
+  "info": {
+    "singularName": "storefront",
+    "pluralName": "storefronts",
+    "displayName": "storefront"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "place": {
+      "type": "text"
+    },
+    "storefront_code": {
+      "type": "string"
+    },
+    "business_area": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::business-area.business-area",
+      "inversedBy": "storefront"
+    },
+    "production_orders": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::production-order.production-order",
+      "mappedBy": "storefront"
+    },
+    "product_brakedowns": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product-brakedown.product-brakedown",
+      "mappedBy": "storefront"
+    }
+  }
+}

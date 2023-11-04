@@ -1,0 +1,73 @@
+{
+  "kind": "collectionType",
+  "collectionName": "supplies",
+  "info": {
+    "singularName": "supply",
+    "pluralName": "supplies",
+    "displayName": "supply",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "measurement_unit": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::measurement-unit.measurement-unit"
+    },
+    "warehouse": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::warehouse.warehouse",
+      "inversedBy": "supplies"
+    },
+    "warehouse_categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::warehouse-category.warehouse-category"
+    },
+    "minimum_stock": {
+      "type": "integer"
+    },
+    "minimum_expiration": {
+      "type": "integer"
+    },
+    "delivery_days": {
+      "type": "integer"
+    },
+    "storage_specifications": {
+      "type": "text"
+    },
+    "comments": {
+      "type": "text"
+    },
+    "supply_code": {
+      "type": "string"
+    },
+    "variants": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::variant.variant"
+    },
+    "supply_input_orders": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::supply-input-order.supply-input-order",
+      "mappedBy": "supply"
+    },
+    "list_cost": {
+      "type": "decimal"
+    },
+    "tasks": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::task.task",
+      "mappedBy": "supplies"
+    }
+  }
+}

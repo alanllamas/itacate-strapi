@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "clients",
+  "info": {
+    "singularName": "client",
+    "pluralName": "clients",
+    "displayName": "Client",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "addresses": {
+      "displayName": "address",
+      "type": "component",
+      "repeatable": true,
+      "component": "clients.address"
+    },
+    "client_type": {
+      "type": "enumeration",
+      "enum": [
+        "restaurant",
+        "chef",
+        "hotel",
+        "person"
+      ]
+    },
+    "payment_period": {
+      "type": "enumeration",
+      "enum": [
+        "in0days",
+        "in7days",
+        "in15days",
+        "in30days"
+      ]
+    },
+    "Contact": {
+      "type": "component",
+      "repeatable": true,
+      "component": "clients.phone"
+    },
+    "invoice_data": {
+      "displayName": "invioce_data",
+      "type": "component",
+      "repeatable": false,
+      "component": "clients.invioce-data"
+    },
+    "comments": {
+      "type": "text"
+    }
+  }
+}

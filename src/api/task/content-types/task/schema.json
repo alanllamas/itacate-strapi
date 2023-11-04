@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tasks",
+  "info": {
+    "singularName": "task",
+    "pluralName": "tasks",
+    "displayName": "task"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "required_time_minutes": {
+      "type": "integer"
+    },
+    "supplies": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::supply.supply",
+      "inversedBy": "tasks"
+    }
+  }
+}
